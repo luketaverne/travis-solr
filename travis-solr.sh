@@ -237,8 +237,8 @@ add_core() {
     solr_core=$3
     solr_confs=$4
     # prepare our folders
-    [[ -d "${dir_name}/example/multicore/${solr_core}" ]] || mkdir $dir_name/example/multicore/$solr_core
-    [[ -d "${dir_name}/example/multicore/${solr_core}/conf" ]] || mkdir $dir_name/example/multicore/$solr_core/conf
+    [[ -d "${dir_name}/example/multicore/${solr_core}" ]] || mkdir -p $dir_name/example/multicore/$solr_core
+    [[ -d "${dir_name}/example/multicore/${solr_core}/conf" ]] || mkdir -p $dir_name/example/multicore/$solr_core/conf
 
     # copy text configs from default single core conf to new core to have proper defaults
     cp -R $dir_name/example/solr/conf/{lang,*.txt} $dir_name/example/multicore/$solr_core/conf/
